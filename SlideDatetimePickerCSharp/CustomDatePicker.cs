@@ -15,7 +15,7 @@ namespace SlideDatetimePickerCSharp
 {
     public class CustomDatePicker : DatePicker
     {
-        private const String Tag = "CustomDatePicker";
+        private const String TAG = "CustomDatePicker";
 
         public CustomDatePicker(Context context, IAttributeSet attrs)
             : base(context, attrs)
@@ -41,19 +41,19 @@ namespace SlideDatetimePickerCSharp
             }
             catch (Java.Lang.ClassNotFoundException e)
             {
-                Log.Error(Tag, e, "ClassNotFoundException in CustomDatePicker");
+				Log.Error(TAG, e, "ClassNotFoundException in CustomDatePicker");
             }
             catch (Java.Lang.NoSuchFieldException e)
             {
-                Log.Error(Tag, e, "NoSuchFieldException in CustomDatePicker");
+				Log.Error(TAG, e, "NoSuchFieldException in CustomDatePicker");
             }
             catch (Java.Lang.IllegalAccessException e)
             {
-                Log.Error(Tag, e, "IllegalAccessException in CustomDatePicker");
+				Log.Error(TAG, e, "IllegalAccessException in CustomDatePicker");
             }
             catch (Java.Lang.IllegalArgumentException e)
             {
-                Log.Error(Tag, e, "IllegalArgumentException in CustomDatePicker");
+				Log.Error(TAG, e, "IllegalArgumentException in CustomDatePicker");
             }
         }
     }

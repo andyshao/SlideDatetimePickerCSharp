@@ -7,7 +7,7 @@ namespace SlideDatetimePickerCSharp
 {
     public class CustomTimePicker : TimePicker
     {
-        private const String Tag = "CustomTimePicker";
+        private const String TAG = "CustomTimePicker";
 
         public CustomTimePicker(Context context, IAttributeSet attrs)
             : base(context, attrs)
@@ -34,19 +34,19 @@ namespace SlideDatetimePickerCSharp
             }
             catch (Java.Lang.ClassNotFoundException e)
             {
-                Log.Error(Tag, e, "ClassNotFoundException in CustomTimePicker");
+				Log.Error(TAG, e, "ClassNotFoundException in CustomTimePicker");
             }
             catch (Java.Lang.NoSuchFieldException e)
             {
-                Log.Error(Tag, e, "NoSuchFieldException in CustomTimePicker");
+				Log.Error(TAG, e, "NoSuchFieldException in CustomTimePicker");
             }
             catch (Java.Lang.IllegalAccessException e)
             {
-                Log.Error(Tag, e, "IllegalAccessException in CustomTimePicker");
+				Log.Error(TAG, e, "IllegalAccessException in CustomTimePicker");
             }
             catch (Java.Lang.IllegalArgumentException e)
             {
-                Log.Error(Tag, e, "IllegalArgumentException in CustomTimePicker");
+				Log.Error(TAG, e, "IllegalArgumentException in CustomTimePicker");
             }
         }
     }

@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomDatePicker.cs" />
+    <Compile Include="InternalViewPagerListener.cs" />
     <Compile Include="ITabColorizer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,10 +59,15 @@
     <Compile Include="CustomViewPager.cs" />
     <Compile Include="DateFragment.cs" />
     <Compile Include="IDateChangedListener.cs" />
+    <Compile Include="SlideDateTimeDialogFragment.cs" />
+    <Compile Include="SlideDateTimeListener.cs" />
+    <Compile Include="SlideDateTimePicker.cs" />
     <Compile Include="SlidingTabLayout.cs" />
     <Compile Include="SlidingTabStrip.cs" />
+    <Compile Include="TabClickListener.cs" />
     <Compile Include="TimeFragment.cs" />
     <Compile Include="ITimeChangedListener.cs" />
+    <Compile Include="ViewPagerAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

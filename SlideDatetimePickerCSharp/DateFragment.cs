@@ -1,8 +1,8 @@
 ﻿using System;
-using Android.App;
 using Android.OS;
 using Android.Content;
 using Android.Views;
+using Android.Support.V4.App;
 
 namespace SlideDatetimePickerCSharp
 {
@@ -56,7 +56,7 @@ namespace SlideDatetimePickerCSharp
             //获取指定主题样式的上下文
             Context contextThemeWrapper = new ContextThemeWrapper(
                                               Activity,
-                                              theme == SlideDatetimePicker.HOLO_DARK ? Android.Resource.Style.ThemeHolo : Android.Resource.Style.ThemeHoloLight);
+                                              theme == SlideDateTimePicker.HOLO_DARK ? Android.Resource.Style.ThemeHolo : Android.Resource.Style.ThemeHoloLight);
 
             LayoutInflater localInflater = inflater.CloneInContext(contextThemeWrapper);
 

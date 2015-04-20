@@ -1,10 +1,10 @@
 ﻿using System;
-using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
 using Android.Views;
 using Android.Text.Format;
+using Android.Support.V4.App;
 
 namespace SlideDatetimePickerCSharp
 {
@@ -64,13 +64,13 @@ namespace SlideDatetimePickerCSharp
 			mTimePicker.SetOnTimeChangedListener (this);
 
 			if (isClientSpecified24HourTime) {
-				mTimePicker.Is24HourView = is24HourTime;
+                mTimePicker.SetIs24HourView(new Java.Lang.Boolean(is24HourTime));
 			} else {
-				mTimePicker.Is24HourView = DateFormat.Is24HourFormat (TargetFragment.Activity);
+				mTimePicker.SetIs24HourView (new Java.Lang.Boolean (DateFormat.Is24HourFormat (TargetFragment.Activity)));
 			}
 
-			mTimePicker.CurrentHour = initialHour;
-			mTimePicker.CurrentMinute = initialMinute;
+			mTimePicker.CurrentHour = new Java.Lang.Integer(initialHour);
+			mTimePicker.CurrentMinute = new Java.Lang.Integer(initialMinute);
 
 			if (Build.VERSION.SdkInt >= BuildVersionCodes.IceCreamSandwich
 			   && Build.VERSION.SdkInt <= BuildVersionCodes.IceCreamSandwichMr1) {
@@ -96,17 +96,18 @@ namespace SlideDatetimePickerCSharp
 
 		public void OnValueChange (NumberPicker picker, int oldVal, int newVal)
 		{
+
 			if (picker.Value == 1) {
-				if (mTimePicker.CurrentHour < 12) {
-					mTimePicker.CurrentHour = mTimePicker.CurrentHour + 12;
+				if (mTimePicker.CurrentHour.IntValue() < 12 ){
+                    mTimePicker.CurrentHour = new Java.Lang.Integer(mTimePicker.CurrentHour.IntValue() + 12);
 				}
 			} else {
-				if (mTimePicker.CurrentHour >= 12) {
-					mTimePicker.CurrentHour = mTimePicker.CurrentHour - 12;
+				if (mTimePicker.CurrentHour.IntValue() >= 12) {
+                    mTimePicker.CurrentHour = new Java.Lang.Integer(mTimePicker.CurrentHour.IntValue() - 12);
 				}
 			}
 
-			mCallBack.OnTimeChanged (mTimePicker.CurrentHour, mTimePicker.CurrentMinute);
+            mCallBack.OnTimeChanged(mTimePicker.CurrentHour.IntValue(), mTimePicker.CurrentMinute.IntValue());
 		}
 	}
 }
