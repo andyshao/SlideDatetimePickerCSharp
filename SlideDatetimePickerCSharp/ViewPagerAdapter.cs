@@ -24,9 +24,9 @@ namespace SlideDatetimePickerCSharp
                     {
                         DateFragment dateFragment = DateFragment.NewInstance(
                             mDialogFragment.MyTheme,
-                            mDialogFragment.Calendar.Get(Java.Util.CalendarField.Year),
-                            mDialogFragment.Calendar.Get(Java.Util.CalendarField.Month),
-                            mDialogFragment.Calendar.Get(Java.Util.CalendarField.DayOfMonth),
+                            mDialogFragment.Calendar.Year,
+                            mDialogFragment.Calendar.Month -1,
+                            mDialogFragment.Calendar.Day,
                             mDialogFragment.MinDate,
                             mDialogFragment.MaxDate);
 					dateFragment.SetTargetFragment (mDialogFragment, 200);
@@ -36,8 +36,8 @@ namespace SlideDatetimePickerCSharp
                     {
                         TimeFragment timeFragment = TimeFragment.NewInstance(
                             mDialogFragment.MyTheme,
-                            mDialogFragment.Calendar.Get(Java.Util.CalendarField.HourOfDay),
-                            mDialogFragment.Calendar.Get(Java.Util.CalendarField.Minute),
+                            mDialogFragment.Calendar.Hour,
+                            mDialogFragment.Calendar.Minute,
                             mDialogFragment.IsClientSpecified24HourTime,
                             mDialogFragment.Is24HourTime);
                         timeFragment.SetTargetFragment(mDialogFragment, 200);

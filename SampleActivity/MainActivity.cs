@@ -23,6 +23,7 @@ namespace SampleActivity
             {
 				new SlideDateTimePicker.Builder(SupportFragmentManager)
 					.SetListener(this)
+					.SetIs24HourTime(true)
 					.SetInitialDate(DateTime.Now)
 					.Build()
 					.Show();

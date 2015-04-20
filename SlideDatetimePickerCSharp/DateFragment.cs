@@ -50,8 +50,15 @@ namespace SlideDatetimePickerCSharp
             int initialYear = Arguments.GetInt("year");
             int initialMonth = Arguments.GetInt("month");
             int initialDay = Arguments.GetInt("day");
-            DateTime minDate = new DateTime(Arguments.GetLong("minDate"));
-            DateTime maxDate = new DateTime(Arguments.GetLong("maxDate"));
+			DateTime? minDate = null;
+			DateTime? maxDate = null;
+
+			if (Arguments.GetLong ("minDate", 0) > 0) {
+				minDate = new DateTime (Arguments.GetLong ("minDate"));
+			}
+			if (Arguments.GetLong ("maxDate", 0) > 0) {
+				maxDate = new DateTime (Arguments.GetLong ("maxDate"));
+			}
 
             //获取指定主题样式的上下文
             Context contextThemeWrapper = new ContextThemeWrapper(
@@ -63,17 +70,17 @@ namespace SlideDatetimePickerCSharp
             View v = localInflater.Inflate(Resource.Layout.Fragment_Date, container, false);
 
             mDatePicker = v.FindViewById<CustomDatePicker>(Resource.Id.datePicker);
-            mDatePicker.DescendantFocusability = DescendantFocusability.BlockDescendants;
             mDatePicker.Init(initialYear, initialMonth, initialDay, this);
+			mDatePicker.DescendantFocusability = DescendantFocusability.BlockDescendants;
 
             if (minDate != null)
             {
-                mDatePicker.MinDate = ConvertDateTimeLong(minDate);
+				mDatePicker.MinDate = ConvertDateTimeLong(minDate.Value);
             }
 
             if (maxDate != null)
             {
-                mDatePicker.MaxDate = ConvertDateTimeLong(maxDate);
+				mDatePicker.MaxDate = ConvertDateTimeLong(maxDate.Value);
             }
 
             return v;

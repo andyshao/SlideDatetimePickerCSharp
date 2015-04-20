@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlideDatetimePickerCSharp", "SlideDatetimePickerCSharp\SlideDatetimePickerCSharp.csproj", "{190F775F-199D-41DD-AEDC-39BAFD108F06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleActivity", "SampleActivity\SampleActivity.csproj", "{156DE673-E42A-4BDE-A7E0-D94344683AF3}"
@@ -11,26 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Release|Any CPU.Build.0 = Release|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{156DE673-E42A-4BDE-A7E0-D94344683AF3}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{190F775F-199D-41DD-AEDC-39BAFD108F06}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 1
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://172.16.101.111:8080/tfs/ninestudio
-		SccProjectUniqueName0 = SlideDatetimePickerCSharp\\SlideDatetimePickerCSharp.csproj
-		SccProjectName0 = SlideDatetimePickerCSharp
-		SccAuxPath0 = http://172.16.101.111:8080/tfs/ninestudio
-		SccLocalPath0 = SlideDatetimePickerCSharp
-		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

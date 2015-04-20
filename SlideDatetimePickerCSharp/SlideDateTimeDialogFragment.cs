@@ -37,7 +37,6 @@ namespace SlideDatetimePickerCSharp
         private DateTime mMaxDate;
         private bool mIsClientSpecified24HourTime;
         private bool mIs24HourTime;
-        private Calendar mCalendar;
         private FormatStyleFlags mDateFlags = FormatStyleFlags.ShowWeekday | FormatStyleFlags.ShowDate | FormatStyleFlags.AbbrevAll;
 
         public bool IsClientSpecified24HourTime
@@ -72,11 +71,11 @@ namespace SlideDatetimePickerCSharp
             }
         }
 
-        public Calendar Calendar
+        public DateTime Calendar
         {
             get
             {
-                return mCalendar;
+                return mInitialDate;
             }
         }
 
@@ -123,9 +122,6 @@ namespace SlideDatetimePickerCSharp
 
             RetainInstance = true;
             UnPackBundle();
-
-            mCalendar = Calendar.Instance;
-            mCalendar.Time = new Date(mInitialDate.Year, mInitialDate.Month, mInitialDate.Day, mInitialDate.Hour, mInitialDate.Minute, mInitialDate.Second);
 
             switch (mTheme)
             {
@@ -236,7 +232,7 @@ namespace SlideDatetimePickerCSharp
                     {
                         throw new ArgumentNullException("Listener no longer exists for mOkButton");
                     }
-                    mListener.OnDateTimeSet(new DateTime(mCalendar.TimeInMillis));
+                    mListener.OnDateTimeSet(mInitialDate);
                     Dismiss();
                 };
 
@@ -255,22 +251,18 @@ namespace SlideDatetimePickerCSharp
         {
             if (mIsClientSpecified24HourTime)
             {
-                Java.Text.SimpleDateFormat formatter;
                 if (mIs24HourTime)
                 {
-                    formatter = new Java.Text.SimpleDateFormat("HH:mm");
-                    mSlidingTabLayout.SetTabText(1, formatter.Format(mCalendar.Time));
+					mSlidingTabLayout.SetTabText (1, mInitialDate.ToString ("HH:mm"));
                 }
                 else
                 {
-                    formatter = new Java.Text.SimpleDateFormat("h:mm aa");
-                    mSlidingTabLayout.SetTabText(1, formatter.Format(mCalendar.Time));
+					mSlidingTabLayout.SetTabText (1, mInitialDate.ToString ("h:mm tt"));
                 }
             }
             else
             {
-                mSlidingTabLayout.SetTabText(1, DateFormat.GetDateFormat(
-                    mContext).Format(mCalendar.TimeInMillis));
+				mSlidingTabLayout.SetTabText (1, mInitialDate.ToString ("h:mm tt"));
             }
         }
 
@@ -287,8 +279,7 @@ namespace SlideDatetimePickerCSharp
 
         private void UpdateDateTab()
         {
-            mSlidingTabLayout.SetTabText(0, DateUtils.FormatDateTime(
-                mContext, mCalendar.TimeInMillis, mDateFlags));
+            mSlidingTabLayout.SetTabText(0, mInitialDate.ToString("yyyyƒÍM‘¬d»’"));
         }
 
         private void InitTabs()
@@ -301,7 +292,7 @@ namespace SlideDatetimePickerCSharp
 
         public void OnDateChanged(int year, int month, int day)
         {
-            mCalendar.Set(year, month, day);
+			mInitialDate = new DateTime(year, month + 1, day, mInitialDate.Hour, mInitialDate.Minute, mInitialDate.Second);
             UpdateDateTab();
         }
 
@@ -311,9 +302,7 @@ namespace SlideDatetimePickerCSharp
 
         public void OnTimeChanged(int hour, int minute)
         {
-            mCalendar.Set(CalendarField.HourOfDay, hour);
-            mCalendar.Set(CalendarField.Minute, minute);
-
+			mInitialDate = new DateTime(mInitialDate.Year, mInitialDate.Month, mInitialDate.Day, hour, minute, mInitialDate.Second);
             UpdateTimeTab();
         }
 
