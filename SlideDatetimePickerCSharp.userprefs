@@ -1,6 +1,11 @@
-﻿<Properties StartupItem="SlideDatetimePickerCSharp\SlideDatetimePickerCSharp.csproj">
+﻿<Properties StartupItem="SampleActivity\SampleActivity.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.7&amp;2a42f29b&amp;0&amp;0001" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="e:\Xamarim.Android\SlideDatetimePickerCSharp\SlideDatetimePickerCSharp\SlideDateTimeDialogFragment.cs">
+    <Files>
+      <File FileName="e:\Xamarim.Android\SlideDatetimePickerCSharp\SlideDatetimePickerCSharp\SlidingTabStrip.cs" Line="49" Column="3" />
+      <File FileName="e:\Xamarim.Android\SlideDatetimePickerCSharp\SlideDatetimePickerCSharp\SlideDateTimeDialogFragment.cs" Line="277" Column="63" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

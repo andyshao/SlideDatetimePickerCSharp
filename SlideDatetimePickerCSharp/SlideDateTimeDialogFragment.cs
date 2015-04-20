@@ -221,8 +221,11 @@ namespace SlideDatetimePickerCSharp
 
         private void InitViewPager()
         {
-            UpdateDateTab();
-            UpdateTimeTab();
+			mViewPagerAdapter = new ViewPagerAdapter (ChildFragmentManager, this);
+			mViewPager.Adapter = mViewPagerAdapter;
+
+			mSlidingTabLayout.SetCustomTabView (Resource.Layout.Custom_Tab, Resource.Id.tabText);
+			mSlidingTabLayout.SetViewPager (mViewPager);
         }
 
         private void InitButtons()
@@ -290,7 +293,8 @@ namespace SlideDatetimePickerCSharp
 
         private void InitTabs()
         {
-            throw new NotImplementedException();
+            UpdateDateTab();
+            UpdateTimeTab();
         }
 
         #region IDateChangeListener

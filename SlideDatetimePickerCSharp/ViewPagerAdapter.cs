@@ -29,6 +29,7 @@ namespace SlideDatetimePickerCSharp
                             mDialogFragment.Calendar.Get(Java.Util.CalendarField.DayOfMonth),
                             mDialogFragment.MinDate,
                             mDialogFragment.MaxDate);
+					dateFragment.SetTargetFragment (mDialogFragment, 200);
                         return dateFragment;
                     }
                 case 1:

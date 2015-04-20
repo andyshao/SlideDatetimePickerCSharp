@@ -15,16 +15,13 @@ namespace SlideDatetimePickerCSharp
         private float mTouchSlop;
 
         public CustomViewPager(Context context)
-            : base(context)
-        {
-            Init(context);
-        }
+			: this(context,null){}
 
-        public CustomViewPager(Context context, IAttributeSet attrs)
-            : base(context, attrs)
-        {
-            Init(context);
-        }
+		public CustomViewPager(Context context,IAttributeSet attrs)
+			:base(context,attrs)
+		{
+			Init (context);
+		}
 
         private void Init(Context context)
         {

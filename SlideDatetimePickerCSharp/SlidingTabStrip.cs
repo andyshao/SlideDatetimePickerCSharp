@@ -45,7 +45,7 @@ namespace SlideDatetimePickerCSharp
         private const int DEFAULT_BOTTOM_BORDER_THICKNESS_DIPS = 2;
         private const byte DEFAULT_BOTTOM_BORDER_COLOR_ALPHA = 0x26;
         private const int SELECTED_INDICATOR_THICKNESS_DIPS = 6;
-        private const uint DEFAULT_SELECTED_INDICATOR_COLOR = 0xff33b5e5;
+		private const int DEFAULT_SELECTED_INDICATOR_COLOR = unchecked((int)0xff33b5e5);
 
         private const int DEFAULT_DIVIDER_THICKNESS_DIPS = 1;
         private const byte DEFAULT_DIVIDER_COLOR_ALPHA = 0x20;
@@ -86,6 +86,21 @@ namespace SlideDatetimePickerCSharp
             int themeForegroundColor = outValue.Data;
 
             mDefaultBottomBorderColor = SetColorAlpha(themeForegroundColor, DEFAULT_BOTTOM_BORDER_COLOR_ALPHA);
+
+            mDefaultTabColorizer = new SimpleTabColorizer();
+            mDefaultTabColorizer.SetIndicatorColors(DEFAULT_SELECTED_INDICATOR_COLOR);
+            mDefaultTabColorizer.SetDividerColors(SetColorAlpha(themeForegroundColor, DEFAULT_DIVIDER_COLOR_ALPHA));
+
+            mBottomBorderThickness = (int)(DEFAULT_BOTTOM_BORDER_THICKNESS_DIPS * density);
+            mBottomBorderPaint = new Paint();
+            mBottomBorderPaint.Color = new Color(mDefaultBottomBorderColor);
+
+            mSelectedIndicatorThickness = (int)(SELECTED_INDICATOR_THICKNESS_DIPS * density);
+            mSelectedIndicatorPaint = new Paint();
+
+            mDividerHeight = DEFAULT_DIVIDER_HEIGHT;
+            mDividerPaint = new Paint();
+            mDividerPaint.StrokeWidth = (int)(DEFAULT_DIVIDER_THICKNESS_DIPS * density);
         }
 
         public void SetCustomTabColorizer(ITabColorizer customTabColorizer)

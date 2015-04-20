@@ -12,9 +12,9 @@ using Android.Widget;
 
 namespace SlideDatetimePickerCSharp
 {
-    public abstract class SlideDateTimeListener
+    public interface SlideDateTimeListener
     {
-        public abstract void OnDateTimeSet(DateTime date);
-        public virtual void OnDateTimeCancel() { }
+        void OnDateTimeSet(DateTime date);
+        void OnDateTimeCancel();
     }
 }
